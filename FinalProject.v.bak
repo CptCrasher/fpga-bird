@@ -1,0 +1,19 @@
+module final_proj(clk,KEY[1:0],VGA_VS,VGA_HS,VGA_B[3:0],VGA_G[3:0],VGA_R[3:0]);
+
+	input clk;
+	input [1:0] KEY;
+	
+	output VGA_VS,VGA_HS;
+	output [3:0] VGA_B,VGA_G,VGA_R;
+	
+	wire [31:0] x,y;
+	wire pixel_clk;
+	
+	
+	pll pll_inst(.inclk0(clk), .c0(pixel_clk));
+	vga_controller vga_controller_inst(pixel_clk,KEY[0],h_sync,v_sync,disp_ena,x[31:0],y[31:0]);
+	
+	assign VGA_HS = h_sync;
+	assign VGA_VS = v_sync;
+	
+	assign refresh_tick = ((y == 481) && (x == 0)) ? 1 : 0; // start of vsync(vertical retrace)

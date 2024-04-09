@@ -1,0 +1,1574 @@
+Analysis & Synthesis report for FinalProject
+Sun Apr  7 23:36:10 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: final_proj:comb_3
+ 16. Parameter Settings for User Entity Instance: final_proj:comb_3|pll:pll_inst|altpll:altpll_component
+ 17. Parameter Settings for User Entity Instance: final_proj:comb_3|vga_controller:vga_controller_inst
+ 18. Parameter Settings for User Entity Instance: final_proj:comb_3|ClockDivider_1s:comb_5
+ 19. Parameter Settings for User Entity Instance: final_proj:comb_3|ClockDivider_05s:comb_6
+ 20. Parameter Settings for User Entity Instance: final_proj:comb_3|breadboard_controller:comb_8|ClockDivider:comb_3
+ 21. altpll Parameter Settings by Entity Instance
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Apr  7 23:36:10 2024          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; FinalProject                                   ;
+; Top-level Entity Name              ; DE10_LITE_Golden_Top                           ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 2,035                                          ;
+;     Total combinational functions  ; 2,035                                          ;
+;     Dedicated logic registers      ; 498                                            ;
+; Total registers                    ; 498                                            ;
+; Total pins                         ; 177                                            ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 1                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                           ; Setting              ; Default Value      ;
++------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES     ;                    ;
+; Top-level entity name                                            ; DE10_LITE_Golden_Top ; FinalProject       ;
+; Family name                                                      ; MAX 10               ; Cyclone V          ;
+; Use smart compilation                                            ; Off                  ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                   ; On                 ;
+; Enable compact report table                                      ; Off                  ; Off                ;
+; Restructure Multiplexers                                         ; Auto                 ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                  ; Off                ;
+; Preserve fewer node names                                        ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable               ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto                 ; Auto               ;
+; Safe State Machine                                               ; Off                  ; Off                ;
+; Extract Verilog State Machines                                   ; On                   ; On                 ;
+; Extract VHDL State Machines                                      ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                   ; On                 ;
+; Parallel Synthesis                                               ; On                   ; On                 ;
+; DSP Block Balancing                                              ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                               ; On                   ; On                 ;
+; Power-Up Don't Care                                              ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                  ; Off                ;
+; Remove Duplicate Registers                                       ; On                   ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                              ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                  ; Off                ;
+; Optimization Technique                                           ; Balanced             ; Balanced           ;
+; Carry Chain Length                                               ; 70                   ; 70                 ;
+; Auto Carry Chains                                                ; On                   ; On                 ;
+; Auto Open-Drain Pins                                             ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                  ; Off                ;
+; Auto ROM Replacement                                             ; On                   ; On                 ;
+; Auto RAM Replacement                                             ; On                   ; On                 ;
+; Auto DSP Block Replacement                                       ; On                   ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                   ; On                 ;
+; Strict RAM Replacement                                           ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                  ; Off                ;
+; Auto RAM Block Balancing                                         ; On                   ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                  ; Off                ;
+; Auto Resource Sharing                                            ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                          ; On                   ; On                 ;
+; Report Parameter Settings                                        ; On                   ; On                 ;
+; Report Source Assignments                                        ; On                   ; On                 ;
+; Report Connectivity Checks                                       ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                  ; Off                ;
+; Synchronization Register Chain Length                            ; 2                    ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                  ; 100                ;
+; Clock MUX Protection                                             ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                  ; Off                ;
+; Block Design Naming                                              ; Auto                 ; Auto               ;
+; SDC constraint protection                                        ; Off                  ; Off                ;
+; Synthesis Effort                                                 ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                   ; On                 ;
++------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-12        ;   0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+; DE10_LITE_Golden_Top.v           ; yes             ; User Verilog HDL File        ; E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v             ;         ;
+; vga_controller.v                 ; yes             ; User Verilog HDL File        ; E:/quartus-lite/3216/finalproj/vga_controller.v                   ;         ;
+; pll.v                            ; yes             ; User Wizard-Generated File   ; E:/quartus-lite/3216/finalproj/pll.v                              ;         ;
+; FinalProject.v                   ; yes             ; User Verilog HDL File        ; E:/quartus-lite/3216/finalproj/FinalProject.v                     ;         ;
+; displayScore.v                   ; yes             ; User Verilog HDL File        ; E:/quartus-lite/3216/finalproj/displayScore.v                     ;         ;
+; breadboard_controller.v          ; yes             ; User Verilog HDL File        ; E:/quartus-lite/3216/finalproj/breadboard_controller.v            ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; e:/quartus-lite/quartus/libraries/megafunctions/altpll.tdf        ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; e:/quartus-lite/quartus/libraries/megafunctions/aglobal221.inc    ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; e:/quartus-lite/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; e:/quartus-lite/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; e:/quartus-lite/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
+; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction  ; E:/quartus-lite/3216/finalproj/db/pll_altpll.v                    ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 2,035               ;
+;                                             ;                     ;
+; Total combinational functions               ; 2035                ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 804                 ;
+;     -- 3 input functions                    ; 338                 ;
+;     -- <=2 input functions                  ; 893                 ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 1078                ;
+;     -- arithmetic mode                      ; 957                 ;
+;                                             ;                     ;
+; Total registers                             ; 498                 ;
+;     -- Dedicated logic registers            ; 498                 ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 177                 ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Total PLLs                                  ; 1                   ;
+;     -- PLLs                                 ; 1                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 198                 ;
+; Total fan-out                               ; 7850                ;
+; Average fan-out                             ; 2.65                ;
++---------------------------------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                             ;
++--------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                    ; Entity Name           ; Library Name ;
++--------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |DE10_LITE_Golden_Top                      ; 2035 (2)            ; 498 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 177  ; 0            ; 0          ; |DE10_LITE_Golden_Top                                                                                  ; DE10_LITE_Golden_Top  ; work         ;
+;    |final_proj:comb_3|                     ; 2033 (1558)         ; 498 (291)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3                                                                ; final_proj            ; work         ;
+;       |ClockDivider_05s:comb_6|            ; 45 (45)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|ClockDivider_05s:comb_6                                        ; ClockDivider_05s      ; work         ;
+;       |ClockDivider_1s:comb_5|             ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|ClockDivider_1s:comb_5                                         ; ClockDivider_1s       ; work         ;
+;       |breadboard_controller:comb_8|       ; 147 (103)           ; 98 (65)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|breadboard_controller:comb_8                                   ; breadboard_controller ; work         ;
+;          |ClockDivider:comb_3|             ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|breadboard_controller:comb_8|ClockDivider:comb_3               ; ClockDivider          ; work         ;
+;       |displayScore:comb_7|                ; 182 (182)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|displayScore:comb_7                                            ; displayScore          ; work         ;
+;       |pll:pll_inst|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|pll:pll_inst                                                   ; pll                   ; work         ;
+;          |altpll:altpll_component|         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|pll:pll_inst|altpll:altpll_component                           ; altpll                ; work         ;
+;             |pll_altpll:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated ; pll_altpll            ; work         ;
+;       |vga_controller:vga_controller_inst| ; 57 (57)             ; 43 (43)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|final_proj:comb_3|vga_controller:vga_controller_inst                             ; vga_controller        ; work         ;
++--------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                  ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                      ; IP Include File ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------+-----------------+
+; Altera ; ALTPLL       ; 22.1    ; N/A          ; N/A          ; |DE10_LITE_Golden_Top|final_proj:comb_3|pll:pll_inst ; pll.v           ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                           ;
++-----------------------------------------------------+------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                            ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------------------+------------------------+
+; final_proj:comb_3|displayScore:comb_7|g[0]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|g[1]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|g[2]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|g[3]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|g[4]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|g[5]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|g[6]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[0]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[1]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[2]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[3]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[4]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[5]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|displayScore:comb_7|f[6]          ; final_proj:comb_3|displayScore:comb_7|WideNor0 ; yes                    ;
+; final_proj:comb_3|lose_state                        ; final_proj:comb_3|lose_state                   ; yes                    ;
+; Number of user-specified and inferred latches = 15  ;                                                ;                        ;
++-----------------------------------------------------+------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                ;
++---------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal                                                          ;
++---------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; final_proj:comb_3|pipe_speed[3..9,11..31]                           ; Merged with final_proj:comb_3|pipe_speed[10]                                ;
+; final_proj:comb_3|vga_controller:vga_controller_inst|column[11..31] ; Merged with final_proj:comb_3|vga_controller:vga_controller_inst|column[10] ;
+; final_proj:comb_3|vga_controller:vga_controller_inst|row[11..31]    ; Merged with final_proj:comb_3|vga_controller:vga_controller_inst|row[10]    ;
+; final_proj:comb_3|pipe_speed[10]                                    ; Stuck at GND due to stuck port data_in                                      ;
+; final_proj:comb_3|vga_controller:vga_controller_inst|row[10]        ; Stuck at GND due to stuck port data_in                                      ;
+; final_proj:comb_3|vga_controller:vga_controller_inst|column[10]     ; Stuck at GND due to stuck port data_in                                      ;
+; final_proj:comb_3|random_pipe_top~0                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~1                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~2                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~3                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~4                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~5                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~6                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~7                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~8                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~9                                 ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~10                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~11                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~12                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~13                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~14                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~15                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~16                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~17                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~18                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~19                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~20                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~21                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~22                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~23                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~24                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~25                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~26                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~27                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~28                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~29                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~30                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~31                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~32                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~33                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~34                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~35                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~36                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~37                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~38                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~39                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~40                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~41                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~42                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~43                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~44                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~45                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~46                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~47                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~48                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~49                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~50                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~51                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~52                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~53                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~54                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~55                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~56                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~57                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~58                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~59                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~60                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~61                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~62                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~63                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~64                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~65                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~66                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~67                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~68                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~69                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~70                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~71                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~72                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~73                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~74                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~75                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~76                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~77                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~78                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~79                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~80                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~81                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~82                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~83                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~84                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~85                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~86                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~87                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~88                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~89                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~90                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~91                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~92                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~93                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~94                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~95                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~96                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~97                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~98                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~99                                ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~100                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~101                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~102                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~103                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~104                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~105                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~106                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~107                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~108                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~109                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~110                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~111                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~112                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~113                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~114                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~115                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~116                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~117                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~118                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~119                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~120                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~121                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~122                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~123                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~124                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~125                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~126                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~127                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~128                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~129                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~130                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~131                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~132                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~133                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~134                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~135                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~136                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~137                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~138                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~139                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~140                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~141                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~142                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~143                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~144                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~145                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~146                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~147                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~148                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~149                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~150                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~151                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~152                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~153                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~154                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~155                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~156                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~157                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~158                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~159                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~160                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~161                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~162                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~163                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~164                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~165                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~166                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~167                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~168                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~169                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~170                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~171                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~172                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~173                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~174                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~175                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~176                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~177                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~178                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~179                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~180                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~181                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~182                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~183                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~184                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~185                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~186                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~187                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~188                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~189                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~190                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~191                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~192                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~193                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~194                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~195                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~196                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~197                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~198                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~199                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~200                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~201                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~202                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~203                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~204                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~205                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~206                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~207                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~208                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~209                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~210                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~211                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~212                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~213                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~214                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~215                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~216                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~217                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~218                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~219                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~220                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~221                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~222                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~223                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~224                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~225                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~226                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~227                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~228                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~229                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~230                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~231                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~232                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~233                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~234                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~235                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~236                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~237                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~238                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~239                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~240                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~241                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~242                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~243                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~244                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~245                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~246                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~247                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~248                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~249                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~250                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~251                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~252                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~253                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~254                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~255                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~256                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~257                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~258                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~259                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~260                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~261                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~262                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~263                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~264                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~265                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~266                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~267                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~268                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~269                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~270                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~271                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~272                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~273                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~274                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~275                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~276                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~277                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~278                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~279                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~280                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~281                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~282                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~283                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~284                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~285                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~286                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~287                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~288                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~289                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~290                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~291                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~292                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~293                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~294                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~295                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~296                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~297                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~298                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~299                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~300                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~301                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~302                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~303                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~304                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~305                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~306                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~307                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~308                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~309                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~310                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~311                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~312                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~313                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~314                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~315                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~316                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~317                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~318                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|random_pipe_top~319                               ; Stuck at GND due to stuck port clock                                        ;
+; final_proj:comb_3|pipe_slot_top2[9..31]                             ; Stuck at GND due to stuck port data_in                                      ;
+; final_proj:comb_3|pipe_slot_top1[9..31]                             ; Stuck at GND due to stuck port data_in                                      ;
+; final_proj:comb_3|pipe_slot_top2[0]                                 ; Stuck at GND due to stuck port data_in                                      ;
+; final_proj:comb_3|pipe_slot_top1[0]                                 ; Stuck at GND due to stuck port data_in                                      ;
+; Total Number of Removed Registers = 441                             ;                                                                             ;
++---------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                            ;
++--------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                                      ;
++--------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; final_proj:comb_3|vga_controller:vga_controller_inst|row[10] ; Stuck at GND              ; final_proj:comb_3|pipe_slot_top2[31], final_proj:comb_3|pipe_slot_top2[30], ;
+;                                                              ; due to stuck port data_in ; final_proj:comb_3|pipe_slot_top2[29], final_proj:comb_3|pipe_slot_top2[28], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[27], final_proj:comb_3|pipe_slot_top2[26], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[25], final_proj:comb_3|pipe_slot_top2[24], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[23], final_proj:comb_3|pipe_slot_top2[22], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[21], final_proj:comb_3|pipe_slot_top2[20], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[19], final_proj:comb_3|pipe_slot_top2[18], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[17], final_proj:comb_3|pipe_slot_top2[16], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[15], final_proj:comb_3|pipe_slot_top2[14], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[13], final_proj:comb_3|pipe_slot_top2[12], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[11], final_proj:comb_3|pipe_slot_top2[10], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[9], final_proj:comb_3|pipe_slot_top1[31],  ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[30], final_proj:comb_3|pipe_slot_top1[29], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[28], final_proj:comb_3|pipe_slot_top1[27], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[26], final_proj:comb_3|pipe_slot_top1[25], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[24], final_proj:comb_3|pipe_slot_top1[23], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[22], final_proj:comb_3|pipe_slot_top1[21], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[20], final_proj:comb_3|pipe_slot_top1[19], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[18], final_proj:comb_3|pipe_slot_top1[17], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[16], final_proj:comb_3|pipe_slot_top1[15], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[14], final_proj:comb_3|pipe_slot_top1[13], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[12], final_proj:comb_3|pipe_slot_top1[11], ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top1[10], final_proj:comb_3|pipe_slot_top1[9],  ;
+;                                                              ;                           ; final_proj:comb_3|pipe_slot_top2[0], final_proj:comb_3|pipe_slot_top1[0]    ;
++--------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 498   ;
+; Number of registers using Synchronous Clear  ; 218   ;
+; Number of registers using Synchronous Load   ; 37    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 306   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; final_proj:comb_3|start_state          ; 90      ;
+; final_proj:comb_3|pipe_speed[1]        ; 31      ;
+; final_proj:comb_3|index2[1]            ; 10      ;
+; final_proj:comb_3|index2[0]            ; 10      ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|breadboard_controller:comb_8|score_prev[18]   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|vga_controller:vga_controller_inst|column[5]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|vga_controller:vga_controller_inst|row[5]     ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|vga_controller:vga_controller_inst|h_count[5] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|x_pipe1_next[0]                               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|x_pipe2_next[1]                               ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|vga_controller:vga_controller_inst|v_count[0] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|breadboard_controller:comb_8|counter[22]      ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|index2[27]                                    ;
+; 4:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|x_pipe2_l[3]                                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|score[11]                                     ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|y_bird_top[10]                                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |DE10_LITE_Golden_Top|final_proj:comb_3|pipe_speed[0]                                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE10_LITE_Golden_Top|final_proj:comb_3|breadboard_controller:comb_8|red_led          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE10_LITE_Golden_Top|final_proj:comb_3|set_r                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_proj:comb_3 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; x_bird_l       ; 90    ; Signed Integer                        ;
+; x_bird_r       ; 122   ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_proj:comb_3|pll:pll_inst|altpll:altpll_component ;
++-------------------------------+-----------------------+---------------------------------------------+
+; Parameter Name                ; Value                 ; Type                                        ;
++-------------------------------+-----------------------+---------------------------------------------+
+; OPERATION_MODE                ; NORMAL                ; Untyped                                     ;
+; PLL_TYPE                      ; AUTO                  ; Untyped                                     ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=pll ; Untyped                                     ;
+; QUALIFY_CONF_DONE             ; OFF                   ; Untyped                                     ;
+; COMPENSATE_CLOCK              ; CLK0                  ; Untyped                                     ;
+; SCAN_CHAIN                    ; LONG                  ; Untyped                                     ;
+; PRIMARY_CLOCK                 ; INCLK0                ; Untyped                                     ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                 ; Signed Integer                              ;
+; INCLK1_INPUT_FREQUENCY        ; 0                     ; Untyped                                     ;
+; GATE_LOCK_SIGNAL              ; NO                    ; Untyped                                     ;
+; GATE_LOCK_COUNTER             ; 0                     ; Untyped                                     ;
+; LOCK_HIGH                     ; 1                     ; Untyped                                     ;
+; LOCK_LOW                      ; 1                     ; Untyped                                     ;
+; VALID_LOCK_MULTIPLIER         ; 1                     ; Untyped                                     ;
+; INVALID_LOCK_MULTIPLIER       ; 5                     ; Untyped                                     ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                   ; Untyped                                     ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                   ; Untyped                                     ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                   ; Untyped                                     ;
+; SKIP_VCO                      ; OFF                   ; Untyped                                     ;
+; SWITCH_OVER_COUNTER           ; 0                     ; Untyped                                     ;
+; SWITCH_OVER_TYPE              ; AUTO                  ; Untyped                                     ;
+; FEEDBACK_SOURCE               ; EXTCLK0               ; Untyped                                     ;
+; BANDWIDTH                     ; 0                     ; Untyped                                     ;
+; BANDWIDTH_TYPE                ; AUTO                  ; Untyped                                     ;
+; SPREAD_FREQUENCY              ; 0                     ; Untyped                                     ;
+; DOWN_SPREAD                   ; 0                     ; Untyped                                     ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                   ; Untyped                                     ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                   ; Untyped                                     ;
+; CLK9_MULTIPLY_BY              ; 0                     ; Untyped                                     ;
+; CLK8_MULTIPLY_BY              ; 0                     ; Untyped                                     ;
+; CLK7_MULTIPLY_BY              ; 0                     ; Untyped                                     ;
+; CLK6_MULTIPLY_BY              ; 0                     ; Untyped                                     ;
+; CLK5_MULTIPLY_BY              ; 1                     ; Untyped                                     ;
+; CLK4_MULTIPLY_BY              ; 1                     ; Untyped                                     ;
+; CLK3_MULTIPLY_BY              ; 1                     ; Untyped                                     ;
+; CLK2_MULTIPLY_BY              ; 1                     ; Untyped                                     ;
+; CLK1_MULTIPLY_BY              ; 1                     ; Untyped                                     ;
+; CLK0_MULTIPLY_BY              ; 1007                  ; Signed Integer                              ;
+; CLK9_DIVIDE_BY                ; 0                     ; Untyped                                     ;
+; CLK8_DIVIDE_BY                ; 0                     ; Untyped                                     ;
+; CLK7_DIVIDE_BY                ; 0                     ; Untyped                                     ;
+; CLK6_DIVIDE_BY                ; 0                     ; Untyped                                     ;
+; CLK5_DIVIDE_BY                ; 1                     ; Untyped                                     ;
+; CLK4_DIVIDE_BY                ; 1                     ; Untyped                                     ;
+; CLK3_DIVIDE_BY                ; 1                     ; Untyped                                     ;
+; CLK2_DIVIDE_BY                ; 1                     ; Untyped                                     ;
+; CLK1_DIVIDE_BY                ; 1                     ; Untyped                                     ;
+; CLK0_DIVIDE_BY                ; 2000                  ; Signed Integer                              ;
+; CLK9_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK8_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK7_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK6_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK5_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK4_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK3_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK2_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK1_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK0_PHASE_SHIFT              ; 0                     ; Untyped                                     ;
+; CLK5_TIME_DELAY               ; 0                     ; Untyped                                     ;
+; CLK4_TIME_DELAY               ; 0                     ; Untyped                                     ;
+; CLK3_TIME_DELAY               ; 0                     ; Untyped                                     ;
+; CLK2_TIME_DELAY               ; 0                     ; Untyped                                     ;
+; CLK1_TIME_DELAY               ; 0                     ; Untyped                                     ;
+; CLK0_TIME_DELAY               ; 0                     ; Untyped                                     ;
+; CLK9_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK8_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK7_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK6_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK5_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK4_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK3_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK2_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK1_DUTY_CYCLE               ; 50                    ; Untyped                                     ;
+; CLK0_DUTY_CYCLE               ; 50                    ; Signed Integer                              ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                                     ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                                     ;
+; LOCK_WINDOW_UI                ;  0.05                 ; Untyped                                     ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                ; Untyped                                     ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                ; Untyped                                     ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                ; Untyped                                     ;
+; DPA_MULTIPLY_BY               ; 0                     ; Untyped                                     ;
+; DPA_DIVIDE_BY                 ; 1                     ; Untyped                                     ;
+; DPA_DIVIDER                   ; 0                     ; Untyped                                     ;
+; EXTCLK3_MULTIPLY_BY           ; 1                     ; Untyped                                     ;
+; EXTCLK2_MULTIPLY_BY           ; 1                     ; Untyped                                     ;
+; EXTCLK1_MULTIPLY_BY           ; 1                     ; Untyped                                     ;
+; EXTCLK0_MULTIPLY_BY           ; 1                     ; Untyped                                     ;
+; EXTCLK3_DIVIDE_BY             ; 1                     ; Untyped                                     ;
+; EXTCLK2_DIVIDE_BY             ; 1                     ; Untyped                                     ;
+; EXTCLK1_DIVIDE_BY             ; 1                     ; Untyped                                     ;
+; EXTCLK0_DIVIDE_BY             ; 1                     ; Untyped                                     ;
+; EXTCLK3_PHASE_SHIFT           ; 0                     ; Untyped                                     ;
+; EXTCLK2_PHASE_SHIFT           ; 0                     ; Untyped                                     ;
+; EXTCLK1_PHASE_SHIFT           ; 0                     ; Untyped                                     ;
+; EXTCLK0_PHASE_SHIFT           ; 0                     ; Untyped                                     ;
+; EXTCLK3_TIME_DELAY            ; 0                     ; Untyped                                     ;
+; EXTCLK2_TIME_DELAY            ; 0                     ; Untyped                                     ;
+; EXTCLK1_TIME_DELAY            ; 0                     ; Untyped                                     ;
+; EXTCLK0_TIME_DELAY            ; 0                     ; Untyped                                     ;
+; EXTCLK3_DUTY_CYCLE            ; 50                    ; Untyped                                     ;
+; EXTCLK2_DUTY_CYCLE            ; 50                    ; Untyped                                     ;
+; EXTCLK1_DUTY_CYCLE            ; 50                    ; Untyped                                     ;
+; EXTCLK0_DUTY_CYCLE            ; 50                    ; Untyped                                     ;
+; VCO_MULTIPLY_BY               ; 0                     ; Untyped                                     ;
+; VCO_DIVIDE_BY                 ; 0                     ; Untyped                                     ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                     ; Untyped                                     ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                     ; Untyped                                     ;
+; VCO_MIN                       ; 0                     ; Untyped                                     ;
+; VCO_MAX                       ; 0                     ; Untyped                                     ;
+; VCO_CENTER                    ; 0                     ; Untyped                                     ;
+; PFD_MIN                       ; 0                     ; Untyped                                     ;
+; PFD_MAX                       ; 0                     ; Untyped                                     ;
+; M_INITIAL                     ; 0                     ; Untyped                                     ;
+; M                             ; 0                     ; Untyped                                     ;
+; N                             ; 1                     ; Untyped                                     ;
+; M2                            ; 1                     ; Untyped                                     ;
+; N2                            ; 1                     ; Untyped                                     ;
+; SS                            ; 1                     ; Untyped                                     ;
+; C0_HIGH                       ; 0                     ; Untyped                                     ;
+; C1_HIGH                       ; 0                     ; Untyped                                     ;
+; C2_HIGH                       ; 0                     ; Untyped                                     ;
+; C3_HIGH                       ; 0                     ; Untyped                                     ;
+; C4_HIGH                       ; 0                     ; Untyped                                     ;
+; C5_HIGH                       ; 0                     ; Untyped                                     ;
+; C6_HIGH                       ; 0                     ; Untyped                                     ;
+; C7_HIGH                       ; 0                     ; Untyped                                     ;
+; C8_HIGH                       ; 0                     ; Untyped                                     ;
+; C9_HIGH                       ; 0                     ; Untyped                                     ;
+; C0_LOW                        ; 0                     ; Untyped                                     ;
+; C1_LOW                        ; 0                     ; Untyped                                     ;
+; C2_LOW                        ; 0                     ; Untyped                                     ;
+; C3_LOW                        ; 0                     ; Untyped                                     ;
+; C4_LOW                        ; 0                     ; Untyped                                     ;
+; C5_LOW                        ; 0                     ; Untyped                                     ;
+; C6_LOW                        ; 0                     ; Untyped                                     ;
+; C7_LOW                        ; 0                     ; Untyped                                     ;
+; C8_LOW                        ; 0                     ; Untyped                                     ;
+; C9_LOW                        ; 0                     ; Untyped                                     ;
+; C0_INITIAL                    ; 0                     ; Untyped                                     ;
+; C1_INITIAL                    ; 0                     ; Untyped                                     ;
+; C2_INITIAL                    ; 0                     ; Untyped                                     ;
+; C3_INITIAL                    ; 0                     ; Untyped                                     ;
+; C4_INITIAL                    ; 0                     ; Untyped                                     ;
+; C5_INITIAL                    ; 0                     ; Untyped                                     ;
+; C6_INITIAL                    ; 0                     ; Untyped                                     ;
+; C7_INITIAL                    ; 0                     ; Untyped                                     ;
+; C8_INITIAL                    ; 0                     ; Untyped                                     ;
+; C9_INITIAL                    ; 0                     ; Untyped                                     ;
+; C0_MODE                       ; BYPASS                ; Untyped                                     ;
+; C1_MODE                       ; BYPASS                ; Untyped                                     ;
+; C2_MODE                       ; BYPASS                ; Untyped                                     ;
+; C3_MODE                       ; BYPASS                ; Untyped                                     ;
+; C4_MODE                       ; BYPASS                ; Untyped                                     ;
+; C5_MODE                       ; BYPASS                ; Untyped                                     ;
+; C6_MODE                       ; BYPASS                ; Untyped                                     ;
+; C7_MODE                       ; BYPASS                ; Untyped                                     ;
+; C8_MODE                       ; BYPASS                ; Untyped                                     ;
+; C9_MODE                       ; BYPASS                ; Untyped                                     ;
+; C0_PH                         ; 0                     ; Untyped                                     ;
+; C1_PH                         ; 0                     ; Untyped                                     ;
+; C2_PH                         ; 0                     ; Untyped                                     ;
+; C3_PH                         ; 0                     ; Untyped                                     ;
+; C4_PH                         ; 0                     ; Untyped                                     ;
+; C5_PH                         ; 0                     ; Untyped                                     ;
+; C6_PH                         ; 0                     ; Untyped                                     ;
+; C7_PH                         ; 0                     ; Untyped                                     ;
+; C8_PH                         ; 0                     ; Untyped                                     ;
+; C9_PH                         ; 0                     ; Untyped                                     ;
+; L0_HIGH                       ; 1                     ; Untyped                                     ;
+; L1_HIGH                       ; 1                     ; Untyped                                     ;
+; G0_HIGH                       ; 1                     ; Untyped                                     ;
+; G1_HIGH                       ; 1                     ; Untyped                                     ;
+; G2_HIGH                       ; 1                     ; Untyped                                     ;
+; G3_HIGH                       ; 1                     ; Untyped                                     ;
+; E0_HIGH                       ; 1                     ; Untyped                                     ;
+; E1_HIGH                       ; 1                     ; Untyped                                     ;
+; E2_HIGH                       ; 1                     ; Untyped                                     ;
+; E3_HIGH                       ; 1                     ; Untyped                                     ;
+; L0_LOW                        ; 1                     ; Untyped                                     ;
+; L1_LOW                        ; 1                     ; Untyped                                     ;
+; G0_LOW                        ; 1                     ; Untyped                                     ;
+; G1_LOW                        ; 1                     ; Untyped                                     ;
+; G2_LOW                        ; 1                     ; Untyped                                     ;
+; G3_LOW                        ; 1                     ; Untyped                                     ;
+; E0_LOW                        ; 1                     ; Untyped                                     ;
+; E1_LOW                        ; 1                     ; Untyped                                     ;
+; E2_LOW                        ; 1                     ; Untyped                                     ;
+; E3_LOW                        ; 1                     ; Untyped                                     ;
+; L0_INITIAL                    ; 1                     ; Untyped                                     ;
+; L1_INITIAL                    ; 1                     ; Untyped                                     ;
+; G0_INITIAL                    ; 1                     ; Untyped                                     ;
+; G1_INITIAL                    ; 1                     ; Untyped                                     ;
+; G2_INITIAL                    ; 1                     ; Untyped                                     ;
+; G3_INITIAL                    ; 1                     ; Untyped                                     ;
+; E0_INITIAL                    ; 1                     ; Untyped                                     ;
+; E1_INITIAL                    ; 1                     ; Untyped                                     ;
+; E2_INITIAL                    ; 1                     ; Untyped                                     ;
+; E3_INITIAL                    ; 1                     ; Untyped                                     ;
+; L0_MODE                       ; BYPASS                ; Untyped                                     ;
+; L1_MODE                       ; BYPASS                ; Untyped                                     ;
+; G0_MODE                       ; BYPASS                ; Untyped                                     ;
+; G1_MODE                       ; BYPASS                ; Untyped                                     ;
+; G2_MODE                       ; BYPASS                ; Untyped                                     ;
+; G3_MODE                       ; BYPASS                ; Untyped                                     ;
+; E0_MODE                       ; BYPASS                ; Untyped                                     ;
+; E1_MODE                       ; BYPASS                ; Untyped                                     ;
+; E2_MODE                       ; BYPASS                ; Untyped                                     ;
+; E3_MODE                       ; BYPASS                ; Untyped                                     ;
+; L0_PH                         ; 0                     ; Untyped                                     ;
+; L1_PH                         ; 0                     ; Untyped                                     ;
+; G0_PH                         ; 0                     ; Untyped                                     ;
+; G1_PH                         ; 0                     ; Untyped                                     ;
+; G2_PH                         ; 0                     ; Untyped                                     ;
+; G3_PH                         ; 0                     ; Untyped                                     ;
+; E0_PH                         ; 0                     ; Untyped                                     ;
+; E1_PH                         ; 0                     ; Untyped                                     ;
+; E2_PH                         ; 0                     ; Untyped                                     ;
+; E3_PH                         ; 0                     ; Untyped                                     ;
+; M_PH                          ; 0                     ; Untyped                                     ;
+; C1_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C2_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C3_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C4_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C5_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C6_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C7_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C8_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; C9_USE_CASC_IN                ; OFF                   ; Untyped                                     ;
+; CLK0_COUNTER                  ; G0                    ; Untyped                                     ;
+; CLK1_COUNTER                  ; G0                    ; Untyped                                     ;
+; CLK2_COUNTER                  ; G0                    ; Untyped                                     ;
+; CLK3_COUNTER                  ; G0                    ; Untyped                                     ;
+; CLK4_COUNTER                  ; G0                    ; Untyped                                     ;
+; CLK5_COUNTER                  ; G0                    ; Untyped                                     ;
+; CLK6_COUNTER                  ; E0                    ; Untyped                                     ;
+; CLK7_COUNTER                  ; E1                    ; Untyped                                     ;
+; CLK8_COUNTER                  ; E2                    ; Untyped                                     ;
+; CLK9_COUNTER                  ; E3                    ; Untyped                                     ;
+; L0_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; L1_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; G0_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; G1_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; G2_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; G3_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; E0_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; E1_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; E2_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; E3_TIME_DELAY                 ; 0                     ; Untyped                                     ;
+; M_TIME_DELAY                  ; 0                     ; Untyped                                     ;
+; N_TIME_DELAY                  ; 0                     ; Untyped                                     ;
+; EXTCLK3_COUNTER               ; E3                    ; Untyped                                     ;
+; EXTCLK2_COUNTER               ; E2                    ; Untyped                                     ;
+; EXTCLK1_COUNTER               ; E1                    ; Untyped                                     ;
+; EXTCLK0_COUNTER               ; E0                    ; Untyped                                     ;
+; ENABLE0_COUNTER               ; L0                    ; Untyped                                     ;
+; ENABLE1_COUNTER               ; L0                    ; Untyped                                     ;
+; CHARGE_PUMP_CURRENT           ; 2                     ; Untyped                                     ;
+; LOOP_FILTER_R                 ;  1.000000             ; Untyped                                     ;
+; LOOP_FILTER_C                 ; 5                     ; Untyped                                     ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                  ; Untyped                                     ;
+; LOOP_FILTER_R_BITS            ; 9999                  ; Untyped                                     ;
+; LOOP_FILTER_C_BITS            ; 9999                  ; Untyped                                     ;
+; VCO_POST_SCALE                ; 0                     ; Untyped                                     ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                     ; Untyped                                     ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                     ; Untyped                                     ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                     ; Untyped                                     ;
+; INTENDED_DEVICE_FAMILY        ; MAX 10                ; Untyped                                     ;
+; PORT_CLKENA0                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKENA1                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKENA2                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKENA3                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKENA4                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKENA5                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_EXTCLK0                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_EXTCLK1                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_EXTCLK2                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_EXTCLK3                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKBAD0                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKBAD1                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK0                     ; PORT_USED             ; Untyped                                     ;
+; PORT_CLK1                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK2                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK3                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK4                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK5                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK6                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK7                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK8                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLK9                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANDATA                 ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANDONE                 ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKLOSS                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_INCLK1                   ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_INCLK0                   ; PORT_USED             ; Untyped                                     ;
+; PORT_FBIN                     ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_PLLENA                   ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CLKSWITCH                ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_ARESET                   ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_PFDENA                   ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANCLK                  ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANACLR                 ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANREAD                 ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANWRITE                ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_LOCKED                   ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_PHASEDONE                ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_PHASESTEP                ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_SCANCLKENA               ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED           ; Untyped                                     ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY     ; Untyped                                     ;
+; M_TEST_SOURCE                 ; 5                     ; Untyped                                     ;
+; C0_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C1_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C2_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C3_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C4_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C5_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C6_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C7_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C8_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; C9_TEST_SOURCE                ; 5                     ; Untyped                                     ;
+; CBXI_PARAMETER                ; pll_altpll            ; Untyped                                     ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                  ; Untyped                                     ;
+; VCO_PHASE_SHIFT_STEP          ; 0                     ; Untyped                                     ;
+; WIDTH_CLOCK                   ; 5                     ; Signed Integer                              ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                     ; Untyped                                     ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                   ; Untyped                                     ;
+; DEVICE_FAMILY                 ; MAX 10                ; Untyped                                     ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                ; Untyped                                     ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                   ; Untyped                                     ;
+; AUTO_CARRY_CHAINS             ; ON                    ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS          ; OFF                   ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS           ; ON                    ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                   ; IGNORE_CASCADE                              ;
++-------------------------------+-----------------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_proj:comb_3|vga_controller:vga_controller_inst ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; h_pixels       ; 640   ; Signed Integer                                                           ;
+; h_fp           ; 16    ; Signed Integer                                                           ;
+; h_pulse        ; 96    ; Signed Integer                                                           ;
+; h_bp           ; 48    ; Signed Integer                                                           ;
+; h_pol          ; 0     ; Unsigned Binary                                                          ;
+; v_pixels       ; 480   ; Signed Integer                                                           ;
+; v_fp           ; 10    ; Signed Integer                                                           ;
+; v_pulse        ; 2     ; Signed Integer                                                           ;
+; v_bp           ; 33    ; Signed Integer                                                           ;
+; v_pol          ; 0     ; Unsigned Binary                                                          ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_proj:comb_3|ClockDivider_1s:comb_5 ;
++----------------+----------------------------------+-----------------------------------+
+; Parameter Name ; Value                            ; Type                              ;
++----------------+----------------------------------+-----------------------------------+
+; D              ; 00000010111110101111000010000000 ; Unsigned Binary                   ;
++----------------+----------------------------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_proj:comb_3|ClockDivider_05s:comb_6 ;
++----------------+----------------------------------+------------------------------------+
+; Parameter Name ; Value                            ; Type                               ;
++----------------+----------------------------------+------------------------------------+
+; D              ; 00000100011110000110100011000000 ; Unsigned Binary                    ;
++----------------+----------------------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_proj:comb_3|breadboard_controller:comb_8|ClockDivider:comb_3 ;
++----------------+----------------------------------+-------------------------------------------------------------+
+; Parameter Name ; Value                            ; Type                                                        ;
++----------------+----------------------------------+-------------------------------------------------------------+
+; D              ; 00000000001011111010111100001000 ; Unsigned Binary                                             ;
++----------------+----------------------------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                                           ;
++-------------------------------+--------------------------------------------------------+
+; Name                          ; Value                                                  ;
++-------------------------------+--------------------------------------------------------+
+; Number of entity instances    ; 1                                                      ;
+; Entity Instance               ; final_proj:comb_3|pll:pll_inst|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                                                 ;
+;     -- PLL_TYPE               ; AUTO                                                   ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                                 ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                                  ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                                      ;
+;     -- VCO_MULTIPLY_BY        ; 0                                                      ;
+;     -- VCO_DIVIDE_BY          ; 0                                                      ;
++-------------------------------+--------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 177                         ;
+; cycloneiii_ff         ; 498                         ;
+;     ENA               ; 198                         ;
+;     ENA SCLR          ; 76                          ;
+;     ENA SLD           ; 32                          ;
+;     SCLR              ; 140                         ;
+;     SCLR SLD          ; 2                           ;
+;     SLD               ; 3                           ;
+;     plain             ; 47                          ;
+; cycloneiii_io_obuf    ; 71                          ;
+; cycloneiii_lcell_comb ; 2036                        ;
+;     arith             ; 957                         ;
+;         2 data inputs ; 752                         ;
+;         3 data inputs ; 205                         ;
+;     normal            ; 1079                        ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 108                         ;
+;         3 data inputs ; 133                         ;
+;         4 data inputs ; 804                         ;
+; cycloneiii_pll        ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 13.30                       ;
+; Average LUT depth     ; 7.31                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sun Apr  7 23:36:02 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject -c FinalProject
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file de10_lite_golden_top.v
+    Info (12023): Found entity 1: DE10_LITE_Golden_Top File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: E:/quartus-lite/3216/finalproj/vga_controller.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file pll.v
+    Info (12023): Found entity 1: pll File: E:/quartus-lite/3216/finalproj/pll.v Line: 40
+Info (12021): Found 3 design units, including 3 entities, in source file finalproject.v
+    Info (12023): Found entity 1: final_proj File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 1
+    Info (12023): Found entity 2: ClockDivider_1s File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 518
+    Info (12023): Found entity 3: ClockDivider_05s File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 535
+Info (12021): Found 1 design units, including 1 entities, in source file displayscore.v
+    Info (12023): Found entity 1: displayScore File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file breadboard_controller.v
+    Info (12023): Found entity 1: breadboard_controller File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 1
+    Info (12023): Found entity 2: ClockDivider File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 96
+Warning (10236): Verilog HDL Implicit Net warning at FinalProject.v(21): created implicit net for "h_sync" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at FinalProject.v(21): created implicit net for "v_sync" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at FinalProject.v(21): created implicit net for "disp_ena" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at FinalProject.v(62): created implicit net for "bird_on" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 62
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.v(22): instance has no name File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.v(23): instance has no name File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.v(24): instance has no name File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at breadboard_controller.v(8): instance has no name File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.v(25): instance has no name File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at DE10_LITE_Golden_Top.v(137): instance has no name File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 137
+Info (12127): Elaborating entity "DE10_LITE_Golden_Top" for the top level hierarchy
+Warning (10034): Output port "DRAM_ADDR" at DE10_LITE_Golden_Top.v(46) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+Warning (10034): Output port "DRAM_BA" at DE10_LITE_Golden_Top.v(47) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 47
+Warning (10034): Output port "LEDR" at DE10_LITE_Golden_Top.v(86) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+Warning (10034): Output port "DRAM_CAS_N" at DE10_LITE_Golden_Top.v(48) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 48
+Warning (10034): Output port "DRAM_CKE" at DE10_LITE_Golden_Top.v(49) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 49
+Warning (10034): Output port "DRAM_CLK" at DE10_LITE_Golden_Top.v(50) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 50
+Warning (10034): Output port "DRAM_CS_N" at DE10_LITE_Golden_Top.v(51) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 51
+Warning (10034): Output port "DRAM_LDQM" at DE10_LITE_Golden_Top.v(53) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 53
+Warning (10034): Output port "DRAM_RAS_N" at DE10_LITE_Golden_Top.v(54) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 54
+Warning (10034): Output port "DRAM_UDQM" at DE10_LITE_Golden_Top.v(55) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 55
+Warning (10034): Output port "DRAM_WE_N" at DE10_LITE_Golden_Top.v(56) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 56
+Warning (10034): Output port "GSENSOR_CS_N" at DE10_LITE_Golden_Top.v(105) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 105
+Warning (10034): Output port "GSENSOR_SCLK" at DE10_LITE_Golden_Top.v(107) has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 107
+Info (12128): Elaborating entity "final_proj" for hierarchy "final_proj:comb_3" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 137
+Warning (10036): Verilog HDL or VHDL warning at FinalProject.v(62): object "bird_on" assigned a value but never read File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 62
+Warning (10230): Verilog HDL assignment warning at FinalProject.v(29): truncated value with size 32 to match size of target (1) File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 29
+Warning (10240): Verilog HDL Always Construct warning at FinalProject.v(140): inferring latch(es) for variable "lose_state", which holds its previous value in one or more paths through the always construct File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 140
+Warning (10030): Net "random_pipe_top.data_a" at FinalProject.v(34) has no driver or initial value, using a default initial value '0' File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 34
+Warning (10030): Net "random_pipe_top.waddr_a" at FinalProject.v(34) has no driver or initial value, using a default initial value '0' File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 34
+Warning (10030): Net "random_pipe_top.we_a" at FinalProject.v(34) has no driver or initial value, using a default initial value '0' File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 34
+Info (10041): Inferred latch for "lose_state" at FinalProject.v(140) File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 140
+Info (12128): Elaborating entity "pll" for hierarchy "final_proj:comb_3|pll:pll_inst" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 20
+Info (12128): Elaborating entity "altpll" for hierarchy "final_proj:comb_3|pll:pll_inst|altpll:altpll_component" File: E:/quartus-lite/3216/finalproj/pll.v Line: 91
+Info (12130): Elaborated megafunction instantiation "final_proj:comb_3|pll:pll_inst|altpll:altpll_component" File: E:/quartus-lite/3216/finalproj/pll.v Line: 91
+Info (12133): Instantiated megafunction "final_proj:comb_3|pll:pll_inst|altpll:altpll_component" with the following parameter: File: E:/quartus-lite/3216/finalproj/pll.v Line: 91
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "2000"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "1007"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=pll"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
+    Info (12023): Found entity 1: pll_altpll File: E:/quartus-lite/3216/finalproj/db/pll_altpll.v Line: 30
+Info (12128): Elaborating entity "pll_altpll" for hierarchy "final_proj:comb_3|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated" File: e:/quartus-lite/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "vga_controller" for hierarchy "final_proj:comb_3|vga_controller:vga_controller_inst" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 21
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(47): truncated value with size 32 to match size of target (10) File: E:/quartus-lite/3216/finalproj/vga_controller.v Line: 47
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(51): truncated value with size 32 to match size of target (10) File: E:/quartus-lite/3216/finalproj/vga_controller.v Line: 51
+Info (12128): Elaborating entity "ClockDivider_1s" for hierarchy "final_proj:comb_3|ClockDivider_1s:comb_5" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 22
+Info (12128): Elaborating entity "ClockDivider_05s" for hierarchy "final_proj:comb_3|ClockDivider_05s:comb_6" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 23
+Info (12128): Elaborating entity "displayScore" for hierarchy "final_proj:comb_3|displayScore:comb_7" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 24
+Warning (10762): Verilog HDL Case Statement warning at displayScore.v(13): can't check case statement for completeness because the case expression has too many possible states File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 13
+Warning (10270): Verilog HDL Case Statement warning at displayScore.v(13): incomplete case statement has no default case item File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at displayScore.v(9): inferring latch(es) for variable "f", which holds its previous value in one or more paths through the always construct File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at displayScore.v(9): inferring latch(es) for variable "g", which holds its previous value in one or more paths through the always construct File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[0]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[1]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[2]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[3]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[4]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[5]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[6]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "g[7]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[0]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[1]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[2]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[3]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[4]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[5]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[6]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (10041): Inferred latch for "f[7]" at displayScore.v(9) File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+Info (12128): Elaborating entity "breadboard_controller" for hierarchy "final_proj:comb_3|breadboard_controller:comb_8" File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at breadboard_controller.v(67): inferring latch(es) for variable "blue_led", which holds its previous value in one or more paths through the always construct File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 67
+Warning (10240): Verilog HDL Always Construct warning at breadboard_controller.v(67): inferring latch(es) for variable "green_led", which holds its previous value in one or more paths through the always construct File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 67
+Warning (10240): Verilog HDL Always Construct warning at breadboard_controller.v(67): inferring latch(es) for variable "red_led", which holds its previous value in one or more paths through the always construct File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 67
+Info (10041): Inferred latch for "red_led" at breadboard_controller.v(67) File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 67
+Info (10041): Inferred latch for "green_led" at breadboard_controller.v(67) File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 67
+Info (10041): Inferred latch for "blue_led" at breadboard_controller.v(67) File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 67
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "final_proj:comb_3|breadboard_controller:comb_8|ClockDivider:comb_3" File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 8
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "E:/quartus-lite/3216/finalproj/db/FinalProject.ram0_final_proj_a91e354f.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/quartus-lite/3216/finalproj/db/FinalProject.ram0_final_proj_a91e354f.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/quartus-lite/3216/finalproj/db/FinalProject.ram0_final_proj_a91e354f.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/quartus-lite/3216/finalproj/db/FinalProject.ram0_final_proj_a91e354f.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276013): RAM logic "final_proj:comb_3|random_pipe_top" is uninferred because MIF is not supported for the selected family File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 34
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/quartus-lite/3216/finalproj/db/FinalProject.ram0_final_proj_a91e354f.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[0]" and its non-tri-state driver. File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[1]" and its non-tri-state driver. File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[2]" and its non-tri-state driver. File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[3]" and its non-tri-state driver. File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 52
+    Warning (13040): bidirectional pin "GSENSOR_SDI" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 108
+    Warning (13040): bidirectional pin "GSENSOR_SDO" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 109
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 115
+    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 122
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[0] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[1] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[2] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[3] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[4] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[5] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|g[6] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[0] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[1] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[2] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[3] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[4] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[5] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13012): Latch final_proj:comb_3|displayScore:comb_7|f[6] has unsafe behavior File: E:/quartus-lite/3216/finalproj/displayScore.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal final_proj:comb_3|score[0] File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "ARDUINO_IO[0]~synth" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13010): Node "ARDUINO_IO[1]~synth" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13010): Node "ARDUINO_IO[2]~synth" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+    Warning (13010): Node "ARDUINO_IO[3]~synth" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 114
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 46
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 47
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 47
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 48
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 49
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 50
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 51
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 53
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 54
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 55
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 56
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 61
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 64
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 70
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 73
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 76
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 86
+    Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 105
+    Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 107
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file E:/quartus-lite/3216/finalproj/output_files/FinalProject.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 33
+    Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 41
+    Warning (15610): No output dependent on input pin "SW[1]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[2]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[3]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[4]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[5]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[6]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[7]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "SW[8]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 91
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 106
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: E:/quartus-lite/3216/finalproj/DE10_LITE_Golden_Top.v Line: 106
+Info (21057): Implemented 2216 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 89 output pins
+    Info (21060): Implemented 71 bidirectional pins
+    Info (21061): Implemented 2038 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 225 warnings
+    Info: Peak virtual memory: 4862 megabytes
+    Info: Processing ended: Sun Apr  7 23:36:10 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/quartus-lite/3216/finalproj/output_files/FinalProject.map.smsg.
+
+

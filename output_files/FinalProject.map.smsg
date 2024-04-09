@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at FinalProject.v(96): always construct contains both blocking and non-blocking assignments File: E:/quartus-lite/3216/finalproj/FinalProject.v Line: 96
+Warning (10268): Verilog HDL information at breadboard_controller.v(49): always construct contains both blocking and non-blocking assignments File: E:/quartus-lite/3216/finalproj/breadboard_controller.v Line: 49

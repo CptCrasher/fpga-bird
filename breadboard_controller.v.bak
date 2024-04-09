@@ -1,0 +1,6 @@
+module breadboard_controller(ARDUINO[3:0]);
+
+output [3:0] ARDUINO;
+
+
+endmodule

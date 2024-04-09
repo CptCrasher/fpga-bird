@@ -1,0 +1,7 @@
+module displayScore(HEX0[7:0],HEX1[7:0],score);
+
+input [7:0] HEX0,HEX1;
+input [31:0] score;
+
+
+endmodule
