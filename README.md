@@ -1,3 +1,3 @@
 # fpga-bird
  Re-creation of "Flappy Bird" utilising a DE10-Lite FPGA and displaying to VGA
-[![Watch the video](https://imgur.com/a/QqnZL8B)](https://www.youtube.com/watch?v=Pg3GReWA4BQ&feature=youtu.be)
+[![Demo Video](https://i.imgur.com/UkFte3U.png)](https://www.youtube.com/watch?v=Pg3GReWA4BQ&feature=youtu.be)
